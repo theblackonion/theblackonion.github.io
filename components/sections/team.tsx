@@ -68,7 +68,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Morakib Hossain",
     position: "Reverse Engineer",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Nashit-7KxQGzHQHF4Ub6pYrQ8XR9c2wJ3mKp.png",
+    image: "https://theblackonion.netlify.app/Image/Team/Nashit.png",
     social: {
       linkedin: "https://www.linkedin.com/in/morakib-hossain-837250255",
       github: "https://github.com/morakib"
@@ -77,7 +77,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Subaita Maryam",
     position: "Security Analyst | CAP | CNSP | ISO/IEC 42001:2023 | CCEP | FCA | EHE | DFE | NDE | CPTAV2",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Subaita-2Gt9pKqL3H5MZ4xQfXnRwJvK9qR5Lm.jpg",
+    image: "https://theblackonion.netlify.app/Image/Team/Subaita.jpg",
     social: {
       linkedin: "https://www.linkedin.com/in/subaita-maryam311",
       github: "https://github.com/subaita-maryam"
@@ -112,7 +112,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Mahir Shahriar Tanshen",
     position: "Backend Developer",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mahir-4Hq2nX8vLkM5oR9pSzJ7tUvYwZ3bDf.jpg",
+    image: "https://theblackonion.netlify.app/Image/Team/Mahir.jpg",
     social: {
       linkedin: "https://linkedin.com/in/0xmahir",
       github: "https://github.com/mahirshahriartanshen",
@@ -122,7 +122,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Umma Morium Sathi",
     position: "Web Penetration Tester | CCEP",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Morium-6Kw3vP8hQoL4tYjS2cXmBnR9zV5nJ1.jpg",
+    image: "https://theblackonion.netlify.app/Image/Team/Morium.jpg",
     social: {
       linkedin: "https://linkedin.com/in/umma-morium-sathi-8898b9337"
     }
