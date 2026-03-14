@@ -45,7 +45,7 @@ export function Header() {
             href="/" 
             className="relative group flex items-center gap-3"
           >
-            <Image src="/logo.jpg" alt="The Black Onion Logo" width={40} height={40} className="rounded-full" />
+            <Image src="/logo.jpg" alt="The Black Onion Logo" width={40} height={40} className="hidden md:block rounded-full" />
             <span className="font-serif text-2xl md:text-3xl font-light tracking-[0.2em] transition-colors duration-300 text-black">
               The Black Onion
             </span>
