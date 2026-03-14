@@ -136,7 +136,7 @@ export function Footer() {
 
         {/* Large Decorative Text */}
         <div className="mt-16 md:mt-24 overflow-hidden">
-          <p className="font-serif text-[8vw] md:text-[6vw] lg:text-[5vw] font-light tracking-[-0.02em] text-foreground/[0.03] leading-none whitespace-nowrap">
+          <p className="font-serif text-[8vw] md:text-[6vw] lg:text-[5vw] font-light tracking-[-0.02em] text-foreground/[0.07] leading-none whitespace-nowrap">
             Security is the foundation of digital trust.
           </p>
         </div>

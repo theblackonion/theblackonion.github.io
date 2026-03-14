@@ -2,6 +2,31 @@
 
 import { useEffect, useRef, useState } from "react"
 
+function AnimatedCounter({ value, isVisible }: { value: number; isVisible: boolean }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isVisible) return;
+    let start = 0;
+    const duration = 2000;
+    const increment = value / (duration / 16);
+
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= value) {
+        setCount(value);
+        clearInterval(timer);
+      } else {
+        setCount(Math.ceil(start));
+      }
+    }, 16);
+
+    return () => clearInterval(timer);
+  }, [value, isVisible]);
+
+  return <>{count}</>;
+}
+
 export function VisionSection() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
@@ -65,7 +90,7 @@ export function VisionSection() {
               {/* Large Statement */}
               <div className="">
                 <h2 
-                  className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-[1.1] tracking-[-0.01em] text-foreground max-w-5xl text-pretty"
+                  className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-light leading-[1.1] tracking-[-0.01em] text-foreground max-w-5xl text-pretty"
                   style={{
                     opacity: isVisible ? 1 : 0,
                     transform: isVisible ? "translateY(0)" : "translateY(60px)",
@@ -75,7 +100,7 @@ export function VisionSection() {
                     transitionDelay: "0.1s"
                   }}
                 >
-                  We are The Black Onion — an elite team of offensive cybersecurity professionals redefining digital defense.
+                  We are The Black Onion — a collective of elite offensive security professionals driven by curiosity, technical mastery, and a relentless pursuit of excellence in the digital domain.
                 </h2>
               </div>
 
@@ -92,8 +117,11 @@ export function VisionSection() {
                     transitionDelay: "0.3s"
                   }}
                 >
-                  <p className="text-lg md:text-xl leading-relaxed text-foreground/80">
-                    Our expertise spans penetration testing, red teaming, exploit development, and CTF competitions, where we push technology to its limits. By thinking like attackers, we identify weaknesses before they become threats.
+                  <p className="text-lg leading-relaxed text-foreground/80">
+                    Our team operates at the intersection of creativity and cyber warfare, specializing in advanced penetration testing, red teaming, exploit development, and capture-the-flag (CTF) competitions that challenge the limits of what's possible in modern cybersecurity.
+                  </p>
+                  <p className="text-lg leading-relaxed text-foreground/80">
+                    At The Black Onion, we believe that true defense begins with understanding offense. By thinking like adversaries, we uncover vulnerabilities before they can be exploited by malicious actors. Every system, every protocol, and every line of code is an opportunity to learn, innovate, and strengthen the world's digital resilience.
                   </p>
                 </div>
                 <div 
@@ -107,8 +135,11 @@ export function VisionSection() {
                     transitionDelay: "0.4s"
                   }}
                 >
-                  <p className="text-lg md:text-xl leading-relaxed text-foreground/80">
-                    Our mission is to enhance global cyber resilience through research, innovation, and knowledge sharing. United by passion and precision, we explore the unseen layers of cyberspace to uncover hidden risks.
+                  <p className="text-lg leading-relaxed text-foreground/80">
+                    Our members include researchers, ethical hackers, and cyber strategists united by a single mission — to fortify global cyber defenses through knowledge, collaboration, and responsible disclosure. From dissecting zero-day exploits to contributing to open-source security tools, we share our findings with the broader cybersecurity community.
+                  </p>
+                  <p className="text-lg leading-relaxed text-foreground/80">
+                    <strong className="text-foreground">The Black Onion isn't just a team — it's a mindset.</strong> A commitment to continuous learning, ethical hacking, and pushing technology beyond its comfort zone. Because in a world of ever-evolving digital threats, only those who dare to explore the dark corners of cyberspace can truly protect the light.
                   </p>
                 </div>
               </div>
@@ -126,16 +157,16 @@ export function VisionSection() {
                 }}
               >
                 {[
-                  { value: "12", label: "Team Members" },
-                  { value: "11", label: "Security Specializations" },
-                  { value: "13", label: "CTF Achievements" },
-                  { value: "100%", label: "Commitment" },
+                  { value: 8, label: "Project Work" },
+                  { value: 1, label: "CTF Organize" },
+                  { value: 5, label: "Workshop" },
+                  { value: 3, label: "Event" },
                 ].map((stat, index) => (
                   <div key={stat.label} className="my-0 space-x-0 leading-5">
                     <span className="text-4xl md:text-5xl font-light text-foreground font-sans lg:text-8xl">
-                      {stat.value}
+                      <AnimatedCounter value={stat.value} isVisible={isVisible} />
                     </span>
-                    <p className="text-xs tracking-[0.15em] uppercase text-muted-foreground">
+                    <p className="text-xs pt-4 tracking-[0.15em] uppercase text-muted-foreground">
                       {stat.label}
                     </p>
                   </div>

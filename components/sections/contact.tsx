@@ -40,7 +40,7 @@ export function ContactSection() {
     <section 
       ref={sectionRef}
       id="contact"
-      className="relative py-32 md:py-48 "
+      className="relative py-32 md:py-48 bg-primary text-primary-foreground"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 pointer-events-none">
@@ -66,9 +66,9 @@ export function ContactSection() {
                 transition: "all 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
               }}
             >
-              <span className="text-xs tracking-[0.3em] uppercase text-muted-foreground">(08)</span>
-              <div className="w-8 h-px bg-border" />
-              <span className="text-xs tracking-[0.3em] uppercase text-muted-foreground">Contact</span>
+              <span className="text-xs tracking-[0.3em] uppercase text-primary-foreground/70">(08)</span>
+              <div className="w-8 h-px bg-primary-foreground/30" />
+              <span className="text-xs tracking-[0.3em] uppercase text-primary-foreground/70">Contact</span>
             </div>
           </div>
 
@@ -78,7 +78,7 @@ export function ContactSection() {
               {/* Left Column - Text */}
               <div className="space-y-8">
                 <h2 
-                  className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-[1.1] tracking-[-0.01em] text-foreground text-pretty"
+                  className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-[1.1] tracking-[-0.01em] text-primary-foreground text-pretty"
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? "translateY(0)" : "translateY(40px)",
@@ -92,7 +92,7 @@ export function ContactSection() {
                 </h2>
                 
                 <p 
-                  className="text-lg text-muted-foreground leading-relaxed max-w-md"
+                  className="text-lg text-primary-foreground/70 leading-relaxed max-w-md"
                   style={{
                     opacity: isVisible ? 1 : 0,
                     transform: isVisible ? "translateY(0)" : "translateY(30px)",
@@ -118,8 +118,8 @@ export function ContactSection() {
                   }}
                 >
                   <div className="space-y-1">
-                    <span className="text-xs tracking-[0.2em] uppercase text-muted-foreground">Email</span>
-                    <p className="text-foreground">
+                    <span className="text-xs tracking-[0.2em] uppercase text-primary-foreground/70">Email</span>
+                    <p className="text-primary-foreground">
                       <a href="mailto:help@theblackonion.org" className="hover:text-accent transition-colors duration-300">
                         help@theblackonion.org
                       </a>
@@ -127,8 +127,8 @@ export function ContactSection() {
                   </div>
                   
                   <div className="space-y-1">
-                    <span className="text-xs tracking-[0.2em] uppercase text-muted-foreground">Discord</span>
-                    <p className="text-foreground">
+                    <span className="text-xs tracking-[0.2em] uppercase text-primary-foreground/70">Discord</span>
+                    <p className="text-primary-foreground">
                       <a href="https://discord.gg/G9UJzGqu" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">
                         discord.gg/G9UJzGqu
                       </a>
@@ -136,8 +136,8 @@ export function ContactSection() {
                   </div>
                   
                   <div className="space-y-1">
-                    <span className="text-xs tracking-[0.2em] uppercase text-muted-foreground">GitHub</span>
-                    <p className="text-foreground">
+                    <span className="text-xs tracking-[0.2em] uppercase text-primary-foreground/70">GitHub</span>
+                    <p className="text-primary-foreground">
                       <a href="https://github.com/theblackonion" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">
                         github.com/theblackonion
                       </a>
@@ -145,8 +145,8 @@ export function ContactSection() {
                   </div>
 
                   <div className="space-y-1">
-                    <span className="text-xs tracking-[0.2em] uppercase text-muted-foreground">Blog</span>
-                    <p className="text-foreground">
+                    <span className="text-xs tracking-[0.2em] uppercase text-primary-foreground/70">Blog</span>
+                    <p className="text-primary-foreground">
                       <a href="https://blog.theblackonion.org" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">
                         blog.theblackonion.org
                       </a>
@@ -170,7 +170,7 @@ export function ContactSection() {
                     <a 
                       key={social}
                       href="#"
-                      className="text-sm tracking-[0.1em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300"
+                      className="text-sm tracking-[0.1em] uppercase text-primary-foreground/70 hover:text-primary-foreground transition-colors duration-300"
                     >
                       {social}
                     </a>
@@ -194,7 +194,7 @@ export function ContactSection() {
                 {/* Name & Email */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="text-xs tracking-[0.2em] uppercase text-muted-foreground">
+                    <label htmlFor="name" className="text-xs tracking-[0.2em] uppercase text-primary-foreground/70">
                       Name
                     </label>
                     <input
@@ -202,13 +202,13 @@ export function ContactSection() {
                       id="name"
                       value={formState.name}
                       onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                      className="w-full px-0 py-3 bg-transparent border-0 border-b border-border text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors duration-300"
+                      className="w-full px-0 py-3 bg-transparent border-0 border-b border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:border-foreground transition-colors duration-300"
                       placeholder="Your name"
                       required
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-xs tracking-[0.2em] uppercase text-muted-foreground">
+                    <label htmlFor="email" className="text-xs tracking-[0.2em] uppercase text-primary-foreground/70">
                       Email
                     </label>
                     <input
@@ -216,7 +216,7 @@ export function ContactSection() {
                       id="email"
                       value={formState.email}
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                      className="w-full px-0 py-3 bg-transparent border-0 border-b border-border text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors duration-300"
+                      className="w-full px-0 py-3 bg-transparent border-0 border-b border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:border-foreground transition-colors duration-300"
                       placeholder="your@email.com"
                       required
                     />
@@ -226,7 +226,7 @@ export function ContactSection() {
                 {/* Organization & Subject */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="organization" className="text-xs tracking-[0.2em] uppercase text-muted-foreground">
+                    <label htmlFor="organization" className="text-xs tracking-[0.2em] uppercase text-primary-foreground/70">
                       Organization
                     </label>
                     <input
@@ -234,33 +234,33 @@ export function ContactSection() {
                       id="organization"
                       value={formState.organization}
                       onChange={(e) => setFormState({ ...formState, organization: e.target.value })}
-                      className="w-full px-0 py-3 bg-transparent border-0 border-b border-border text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors duration-300"
+                      className="w-full px-0 py-3 bg-transparent border-0 border-b border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:border-foreground transition-colors duration-300"
                       placeholder="Your organization"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="subject" className="text-xs tracking-[0.2em] uppercase text-muted-foreground">
+                    <label htmlFor="subject" className="text-xs tracking-[0.2em] uppercase text-primary-foreground/70">
                       Subject
                     </label>
                     <select
                       id="subject"
                       value={formState.subject}
                       onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                      className="w-full px-0 py-3 bg-transparent border-0 border-b border-border text-foreground focus:outline-none focus:border-foreground transition-colors duration-300 cursor-pointer"
+                      className="w-full px-0 py-3 bg-transparent border-0 border-b border-primary-foreground/20 text-primary-foreground focus:outline-none focus:border-foreground transition-colors duration-300 cursor-pointer"
                     >
-                      <option value="">Select a subject</option>
-                      <option value="security-services">Security Services</option>
-                      <option value="vulnerability-report">Vulnerability Report</option>
-                      <option value="collaboration">Collaboration</option>
-                      <option value="speaking">Speaking Engagement</option>
-                      <option value="other">Other</option>
+                      <option value="" className="bg-[#050505] text-primary-foreground">Select a subject</option>
+                      <option value="security-services" className="bg-[#050505] text-primary-foreground">Security Services</option>
+                      <option value="vulnerability-report" className="bg-[#050505] text-primary-foreground">Vulnerability Report</option>
+                      <option value="collaboration" className="bg-[#050505] text-primary-foreground">Collaboration</option>
+                      <option value="speaking" className="bg-[#050505] text-primary-foreground">Speaking Engagement</option>
+                      <option value="other" className="bg-[#050505] text-primary-foreground">Other</option>
                     </select>
                   </div>
                 </div>
 
                 {/* Message */}
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-xs tracking-[0.2em] uppercase text-muted-foreground">
+                  <label htmlFor="message" className="text-xs tracking-[0.2em] uppercase text-primary-foreground/70">
                     Message
                   </label>
                   <textarea
@@ -268,7 +268,7 @@ export function ContactSection() {
                     value={formState.message}
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                     rows={4}
-                    className="w-full px-0 py-3 bg-transparent border-0 border-b border-border text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors duration-300 resize-none"
+                    className="w-full px-0 py-3 bg-transparent border-0 border-b border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:border-foreground transition-colors duration-300 resize-none"
                     placeholder="Tell us more about your inquiry..."
                     required
                   />

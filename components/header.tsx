@@ -27,12 +27,14 @@ export function Header() {
   ]
 
   return (
+    <>
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out",
         isScrolled 
           ? "bg-background/95 backdrop-blur-sm border-b border-border" 
-          : "bg-transparent"
+          : "bg-transparent",
+        isMobileMenuOpen && !isScrolled ? "bg-background/0" : ""
       )}
     >
       <div className="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-20">
@@ -42,7 +44,7 @@ export function Header() {
             href="/" 
             className="relative group"
           >
-            <span className="font-serif text-2xl md:text-3xl font-light tracking-[0.2em] text-foreground">
+            <span className="font-serif text-2xl md:text-3xl font-light tracking-[0.2em] transition-colors duration-300  text-black">
               The Black Onion
             </span>
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground transition-all duration-500 group-hover:w-full" />
@@ -95,13 +97,15 @@ export function Header() {
             <div className="flex flex-col gap-1.5">
               <span 
                 className={cn(
-                  "w-6 h-px bg-foreground transition-all duration-300",
+                  "w-6 h-px transition-all duration-300",
+                  isScrolled || isMobileMenuOpen ? "bg-foreground" : "bg-white",
                   isMobileMenuOpen && "rotate-45 translate-y-[4px]"
                 )} 
               />
               <span 
                 className={cn(
-                  "w-6 h-px bg-foreground transition-all duration-300",
+                  "w-6 h-px transition-all duration-300",
+                  isScrolled || isMobileMenuOpen ? "bg-foreground" : "bg-white",
                   isMobileMenuOpen && "-rotate-45 -translate-y-[3px]"
                 )} 
               />
@@ -109,47 +113,52 @@ export function Header() {
           </button>
         </div>
       </div>
+    </header>
 
-      {/* Mobile Menu */}
-      <div
+    {/* Mobile Menu */}
+    <div
+      className={cn(
+        "lg:hidden fixed inset-0 transition-colors duration-500 ease-out z-40",
+        isMobileMenuOpen ? "pointer-events-auto bg-background/95 backdrop-blur-sm" : "pointer-events-none bg-transparent"
+      )}
+    >
+      <nav 
         className={cn(
-          "lg:hidden fixed inset-0 bg-background transition-all duration-500 ease-out",
-          isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          "flex flex-col items-center justify-center h-full gap-8 pb-20 transition-all duration-500 ease-out transform",
+          isMobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8"
         )}
-        style={{ top: isScrolled ? "81px" : "80px" }}
       >
-        <nav className="flex flex-col items-center justify-center h-full gap-8 pb-20">
-          {navItems.map((item, index) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-serif tracking-[0.1em] text-foreground hover:text-accent transition-colors duration-300"
-              style={{ 
-                transitionDelay: isMobileMenuOpen ? `${index * 50}ms` : "0ms",
-                transform: isMobileMenuOpen ? "translateY(0)" : "translateY(20px)",
-                opacity: isMobileMenuOpen ? 1 : 0,
-                transition: "all 0.5s ease-out"
-              }}
-            >
-              {item.label}
-            </Link>
-          ))}
+        {navItems.map((item, index) => (
           <Link
-            href="#contact"
+            key={item.label}
+            href={item.href}
             onClick={() => setIsMobileMenuOpen(false)}
-            className="mt-8 px-8 py-4 text-sm tracking-[0.1em] uppercase text-primary-foreground bg-primary"
+            className="text-2xl font-serif tracking-[0.1em] text-foreground hover:text-accent transition-colors duration-300"
             style={{ 
-              transitionDelay: isMobileMenuOpen ? `${navItems.length * 50}ms` : "0ms",
+              transitionDelay: isMobileMenuOpen ? `${index * 50}ms` : "0ms",
               transform: isMobileMenuOpen ? "translateY(0)" : "translateY(20px)",
               opacity: isMobileMenuOpen ? 1 : 0,
               transition: "all 0.5s ease-out"
             }}
           >
-            Get In Touch
+            {item.label}
           </Link>
-        </nav>
-      </div>
-    </header>
+        ))}
+        <Link
+          href="#contact"
+          onClick={() => setIsMobileMenuOpen(false)}
+          className="mt-8 px-8 py-4 text-sm tracking-[0.1em] uppercase text-primary-foreground bg-primary"
+          style={{ 
+            transitionDelay: isMobileMenuOpen ? `${navItems.length * 50}ms` : "0ms",
+            transform: isMobileMenuOpen ? "translateY(0)" : "translateY(20px)",
+            opacity: isMobileMenuOpen ? 1 : 0,
+            transition: "all 0.5s ease-out"
+          }}
+        >
+          Get In Touch
+        </Link>
+      </nav>
+    </div>
+    </>
   )
 }

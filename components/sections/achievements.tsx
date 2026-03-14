@@ -9,8 +9,10 @@ interface Achievement {
 }
 
 const achievements: Achievement[] = [
+  { rank: "Top 100", event: "Bugcrowd x BlackHat USA CTF 2025 (Two Members)", type: "Awards" },
   { rank: "2nd", event: "MayaCTF 2023", type: "CTF Competition" },
   { rank: "4th", event: "National Antrajal 2023", type: "National Competition" },
+  { rank: "6th", event: "CUET StealthFlags 2025 National CTF", type: "National CTF" },
   { rank: "7th", event: "SMP CTF 2024", type: "CTF Competition" },
   { rank: "7th", event: "Invisible CTF 2023", type: "CTF Competition" },
   { rank: "13th", event: "WTISD Hackathon 2025", type: "Hackathon" },

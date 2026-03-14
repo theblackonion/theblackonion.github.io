@@ -27,23 +27,23 @@ export function PhilosophySection() {
   const principles = [
     {
       number: "01",
-      title: "Cryptography",
-      description: "Deep expertise in cryptographic protocols, implementation, and vulnerabilities. We assess cipher strength, key management, and identify weaknesses in cryptographic implementations."
+      title: "Ethical Hacking",
+      description: "We conduct all our activities within legal and ethical boundaries, always with permission and for defensive purposes."
     },
     {
       number: "02",
-      title: "Web Security",
-      description: "Comprehensive assessment of web applications and APIs. We identify vulnerabilities including injection attacks, authentication bypass, CSRF, XSS, and advanced web exploitation techniques."
+      title: "Knowledge Sharing",
+      description: "We believe in sharing knowledge with the community to raise the overall security awareness and capabilities."
     },
     {
       number: "03",
-      title: "Reverse Engineering",
-      description: "Advanced analysis of binary code, malware, and proprietary systems. We dissect compiled code to understand functionality, identify vulnerabilities, and develop exploits."
+      title: "Innovation",
+      description: "We constantly push the boundaries of what's possible in cybersecurity through research and development."
     },
     {
       number: "04",
-      title: "Binary Exploitation",
-      description: "Expert-level buffer overflow, format string, and other low-level exploitation techniques. We push the boundaries of system security through advanced pwn challenges."
+      title: "Collaboration",
+      description: "We work closely with organizations and the security community to build a safer digital world together."
     }
   ]
 
@@ -112,7 +112,7 @@ export function PhilosophySection() {
             >
               <span className="text-xs tracking-[0.3em] uppercase text-primary-foreground/60">(02)</span>
               <div className="w-8 h-px bg-primary-foreground/30" />
-              <span className="text-xs tracking-[0.3em] uppercase text-primary-foreground/60">Philosophy</span>
+              <span className="text-xs tracking-[0.3em] uppercase text-primary-foreground/60">Core Values</span>
             </div>
           </div>
 
@@ -131,7 +131,7 @@ export function PhilosophySection() {
                   transitionDelay: "0.1s"
                 }}
               >
-                Four core specializations that define our expertise
+                Our Core Values — The principles that guide our work
               </h2>
             </div>
 
