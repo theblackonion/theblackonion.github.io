@@ -31,11 +31,6 @@ export function ContactSection() {
     return () => observer.disconnect()
   }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("[v0] Contact form submitted:", formState)
-  }
-
   return (
     <section 
       ref={sectionRef}
@@ -119,19 +114,20 @@ export function ContactSection() {
                 >
                   <div className="space-y-1">
                     <span className="text-xs tracking-[0.2em] uppercase text-primary-foreground/70">Email</span>
-                    <p className="text-primary-foreground">
-                      <a href="mailto:help@theblackonion.org" className="hover:text-accent transition-colors duration-300">
-                        help@theblackonion.org
+                    <p className="flex flex-col text-primary-foreground">
+                      <a href="mailto:theblackonion.bd@gmail.com" className="hover:text-accent transition-colors duration-300">
+                        theblackonion.bd@gmail.com
                       </a>
                     </p>
                   </div>
                   
                   <div className="space-y-1">
                     <span className="text-xs tracking-[0.2em] uppercase text-primary-foreground/70">Discord</span>
-                    <p className="text-primary-foreground">
-                      <a href="https://discord.gg/G9UJzGqu" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">
-                        discord.gg/G9UJzGqu
+                    <p className="flex items-center gap-3 text-primary-foreground">
+                      <a href="https://discord.gg/yt8GY5xppG" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">
+                        discord.gg/yt8GY5xppG
                       </a>
+                      <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full border border-green-500/30 text-green-400 bg-green-500/10">Online Now</span>
                     </p>
                   </div>
                   
@@ -145,18 +141,18 @@ export function ContactSection() {
                   </div>
 
                   <div className="space-y-1">
-                    <span className="text-xs tracking-[0.2em] uppercase text-primary-foreground/70">Blog</span>
+                    <span className="text-xs tracking-[0.2em] uppercase text-primary-foreground/70">CTF Platform</span>
                     <p className="text-primary-foreground">
-                      <a href="https://blog.theblackonion.org" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">
-                        blog.theblackonion.org
+                      <a href="https://ctftime.org/team/229569" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">
+                        ctftime.org/team/229569
                       </a>
                     </p>
                   </div>
                 </div>
 
-                {/* Social Links */}
+                  {/* Social Links */}
                 <div 
-                  className="flex items-center gap-6 pt-8"
+                  className="flex flex-wrap items-center gap-6 pt-8"
                   style={{
                     opacity: isVisible ? 1 : 0,
                     transform: isVisible ? "translateY(0)" : "translateY(20px)",
@@ -166,13 +162,18 @@ export function ContactSection() {
                     transitionDelay: "0.4s"
                   }}
                 >
-                  {["Discord", "GitHub", "Twitter"].map((social) => (
+                  {[
+                    { name: "GitHub", url: "https://github.com/theblackonion" },
+                    { name: "Discord", url: "https://discord.gg/yt8GY5xppG" },
+                    { name: "Facebook", url: "https://www.facebook.com/theblackonion" },
+                    { name: "CTFTime", url: "https://ctftime.org/team/229569" },
+                  ].map((social) => (
                     <a 
-                      key={social}
-                      href="#"
+                      key={social.name}
+                      href={social.url}
                       className="text-sm tracking-[0.1em] uppercase text-primary-foreground/70 hover:text-primary-foreground transition-colors duration-300"
                     >
-                      {social}
+                      {social.name}
                     </a>
                   ))}
                 </div>
@@ -180,7 +181,8 @@ export function ContactSection() {
 
               {/* Right Column - Form */}
               <form 
-                onSubmit={handleSubmit}
+                action="https://formsubmit.co/help@theblackonion.org"
+                method="POST"
                 className="space-y-8"
                 style={{
                   opacity: isVisible ? 1 : 0,
@@ -200,6 +202,7 @@ export function ContactSection() {
                     <input
                       type="text"
                       id="name"
+                      name="name"
                       value={formState.name}
                       onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                       className="w-full px-0 py-3 bg-transparent border-0 border-b border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:border-foreground transition-colors duration-300"
@@ -214,6 +217,7 @@ export function ContactSection() {
                     <input
                       type="email"
                       id="email"
+                      name="email"
                       value={formState.email}
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                       className="w-full px-0 py-3 bg-transparent border-0 border-b border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:border-foreground transition-colors duration-300"
@@ -232,6 +236,7 @@ export function ContactSection() {
                     <input
                       type="text"
                       id="organization"
+                      name="organization"
                       value={formState.organization}
                       onChange={(e) => setFormState({ ...formState, organization: e.target.value })}
                       className="w-full px-0 py-3 bg-transparent border-0 border-b border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:border-foreground transition-colors duration-300"
@@ -244,6 +249,7 @@ export function ContactSection() {
                     </label>
                     <select
                       id="subject"
+                      name="_subject"
                       value={formState.subject}
                       onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
                       className="w-full px-0 py-3 bg-transparent border-0 border-b border-primary-foreground/20 text-primary-foreground focus:outline-none focus:border-foreground transition-colors duration-300 cursor-pointer"
@@ -265,6 +271,7 @@ export function ContactSection() {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     value={formState.message}
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                     rows={4}

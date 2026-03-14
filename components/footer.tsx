@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -11,7 +12,8 @@ export function Footer() {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
           {/* Logo & Tagline */}
           <div className="lg:col-span-4 space-y-6">
-            <Link href="/" className="inline-block">
+            <Link href="/" className="inline-flex items-center gap-3">
+              <Image src="/logo.jpg" alt="The Black Onion Logo" width={40} height={40} className="rounded-full" />
               <span className="font-serif text-2xl md:text-3xl font-light tracking-[0.2em] text-foreground">
                 The Black Onion
               </span>
@@ -21,37 +23,50 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Navigation */}
+          {/* Navigation - Company & Info */}
           <div className="lg:col-span-2">
             <h4 className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6">
-              Quick Links
+              Navigation
             </h4>
             <nav className="space-y-4">
-              {["About", "Specializations", "Expertise", "Achievements", "Team", "Gallery"].map((item) => (
+              {[
+                { label: "About", href: "#vision" },
+                { label: "Core Values", href: "#philosophy" },
+                { label: "Expertise", href: "#experience" },
+                { label: "Achievements", href: "#achievements" },
+              ].map((item) => (
                 <Link
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
+                  key={item.label}
+                  href={item.href}
                   className="block text-sm text-foreground/70 hover:text-foreground transition-colors duration-300"
                 >
-                  {item}
+                  {item.label}
                 </Link>
               ))}
             </nav>
           </div>
 
-          {/* Legal */}
+          {/* Navigation - Portfolio & Network */}
           <div className="lg:col-span-2">
-            <h4 className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6">
-              Legal
+             <h4 className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6 opacity-0 hidden lg:block select-none">
+              Network
+            </h4>
+            <h4 className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6 lg:hidden mt-4">
+              Connect
             </h4>
             <nav className="space-y-4">
-              {["Privacy Policy", "Terms of Service", "Accessibility"].map((item) => (
+              {[
+                { label: "Team", href: "#team" },
+                { label: "Partners", href: "#partners" },
+                { label: "Gallery", href: "#gallery" },
+                { label: "Contact", href: "#contact" },
+              ].map((item) => (
                 <Link
-                  key={item}
-                  href="#"
+                  key={item.label}
+                  href={item.href}
                   className="block text-sm text-foreground/70 hover:text-foreground transition-colors duration-300"
                 >
-                  {item}
+                  {item.label}
                 </Link>
               ))}
             </nav>
@@ -65,15 +80,16 @@ export function Footer() {
             <div className="space-y-4">
               <p className="text-sm">
                 <a 
-                  href="mailto:help@theblackonion.org" 
+                  href="mailto:theblackonion.bd@gmail.com" 
                   className="text-foreground hover:text-accent transition-colors duration-300"
                 >
-                  help@theblackonion.org
+                  theblackonion.bd@gmail.com
                 </a>
               </p>
               <p className="text-sm">
                 <a 
-                  href="https://discord.gg/G9UJzGqu" 
+                  href="https://discord.gg/yt8GY5xppG" 
+                  target="_blank" rel="noopener noreferrer"
                   className="text-foreground/70 hover:text-foreground transition-colors duration-300"
                 >
                   Join Discord
@@ -82,9 +98,19 @@ export function Footer() {
               <p className="text-sm">
                 <a 
                   href="https://github.com/theblackonion" 
+                  target="_blank" rel="noopener noreferrer"
                   className="text-foreground/70 hover:text-foreground transition-colors duration-300"
                 >
                   github.com/theblackonion
+                </a>
+              </p>
+              <p className="text-sm">
+                <a 
+                  href="https://blog.theblackonion.org" 
+                  target="_blank" rel="noopener noreferrer"
+                  className="text-foreground/70 hover:text-foreground transition-colors duration-300"
+                >
+                  blog.theblackonion.org
                 </a>
               </p>
             </div>
@@ -98,11 +124,12 @@ export function Footer() {
           </p>
           
           {/* Social Links */}
-          <div className="flex items-center gap-8">
+          <div className="flex flex-wrap items-center gap-6 md:gap-8">
             {[
-              { name: "GitHub", url: "#" },
-              { name: "Discord", url: "#" },
-              { name: "Twitter", url: "#" },
+              { name: "GitHub", url: "https://github.com/theblackonion" },
+              { name: "Discord", url: "https://discord.gg/yt8GY5xppG" },
+              { name: "Facebook", url: "https://www.facebook.com/theblackonion" },
+              { name: "CTFTime", url: "https://ctftime.org/team/229569" },
             ].map((social) => (
               <a
                 key={social.name}

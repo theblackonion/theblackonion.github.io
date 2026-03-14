@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { cn } from "@/lib/utils"
 
 export function Header() {
@@ -42,9 +43,10 @@ export function Header() {
           {/* Logo */}
           <Link 
             href="/" 
-            className="relative group"
+            className="relative group flex items-center gap-3"
           >
-            <span className="font-serif text-2xl md:text-3xl font-light tracking-[0.2em] transition-colors duration-300  text-black">
+            <Image src="/logo.jpg" alt="The Black Onion Logo" width={40} height={40} className="rounded-full" />
+            <span className="font-serif text-2xl md:text-3xl font-light tracking-[0.2em] transition-colors duration-300 text-black">
               The Black Onion
             </span>
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground transition-all duration-500 group-hover:w-full" />
