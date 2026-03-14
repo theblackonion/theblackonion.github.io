@@ -18,10 +18,11 @@ export function Header() {
 
   const navItems = [
     { label: "About", href: "#vision" },
-    { label: "Specializations", href: "#philosophy" },
+    // { label: "Specializations", href: "#philosophy" },
     { label: "Expertise", href: "#experience" },
     { label: "Achievements", href: "#achievements" },
     { label: "Team", href: "#team" },
+    // { label: "Partners", href: "#partners" },
     { label: "Gallery", href: "#gallery" },
   ]
 
@@ -53,7 +54,12 @@ export function Header() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="relative group text-sm tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300"
+                className={cn(
+                  "relative group text-sm tracking-[0.15em] uppercase transition-colors duration-300",
+                  isScrolled
+                    ? "text-muted-foreground hover:text-foreground"
+                    : "text-gray-400 hover:text-gray-100"
+                )}
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full" />

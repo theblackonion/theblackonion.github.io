@@ -63,14 +63,14 @@ export function ProjectsSection() {
     <section 
       ref={sectionRef}
       id="projects"
-      className="relative py-32 md:py-48 overflow-hidden"
+      className="relative py-32 md:py-48 "
     >
       <div className="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-20">
         {/* Section Header */}
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-20 mb-20 md:mb-32">
           <div className="lg:col-span-2">
             <div 
-              className="flex items-center gap-4"
+              className="flex items-center gap-4 whitespace-nowrap lg:sticky lg:top-32 lg:mt-3"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateX(0)" : "translateX(-20px)",
@@ -133,7 +133,7 @@ export function ProjectsSection() {
         >
           {/* Main Image */}
           <div className="lg:col-span-8 relative">
-            <div className="relative aspect-[4/3] overflow-hidden bg-secondary">
+            <div className="relative aspect-[4/3]  bg-secondary">
               {projects.map((project, index) => (
                 <div
                   key={project.id}
@@ -224,7 +224,7 @@ export function ProjectsSection() {
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 whitespace-nowrap lg:sticky lg:top-32 lg:mt-3">
                       <span className="font-mono text-xs opacity-50">0{index + 1}</span>
                       <span className="font-serif text-lg">{project.title}</span>
                     </div>

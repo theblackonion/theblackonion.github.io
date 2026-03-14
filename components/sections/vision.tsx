@@ -27,7 +27,7 @@ export function VisionSection() {
     <section 
       ref={sectionRef}
       id="vision"
-      className="relative py-32 md:py-48 lg:py-64 overflow-hidden"
+      className="relative py-32 md:py-48 lg:py-64 "
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 pointer-events-none">
@@ -46,7 +46,7 @@ export function VisionSection() {
           {/* Section Label */}
           <div className="lg:col-span-2">
             <div 
-              className="flex items-center gap-4"
+              className="flex items-center gap-4 whitespace-nowrap lg:sticky lg:top-32 lg:mt-3"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateX(0)" : "translateX(-20px)",
@@ -63,7 +63,7 @@ export function VisionSection() {
           <div className="lg:col-span-10">
             <div className="space-y-16 md:space-y-24">
               {/* Large Statement */}
-              <div className="overflow-hidden">
+              <div className="">
                 <h2 
                   className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-[1.1] tracking-[-0.01em] text-foreground max-w-5xl text-pretty"
                   style={{

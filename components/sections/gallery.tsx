@@ -153,11 +153,29 @@ export function GallerySection() {
     <section 
       ref={sectionRef}
       id="gallery"
-      className="relative py-32 md:py-48 overflow-hidden"
+      className="relative py-32 md:py-48 "
     >
       <div className="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-20">
-        {/* Section Header */}
-        <div className="mb-20 md:mb-32 max-w-3xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+          {/* Section Label */}
+          <div className="lg:col-span-2">
+            <div 
+              className="flex items-center gap-4 whitespace-nowrap lg:sticky lg:top-32 lg:mt-3"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? "translateX(0)" : "translateX(-20px)",
+                transition: "all 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
+              }}
+            >
+              <span className="text-xs tracking-[0.3em] uppercase text-muted-foreground">(07)</span>
+              <div className="w-8 h-px bg-border" />
+              <span className="text-xs tracking-[0.3em] uppercase text-muted-foreground">Gallery</span>
+            </div>
+          </div>
+
+          <div className="lg:col-span-10">
+            {/* Section Header */}
+            <div className="mb-20 md:mb-32 max-w-3xl">
           <h2 
             className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-[1.1] tracking-[-0.01em] text-foreground mb-8 text-pretty"
             style={{
@@ -191,7 +209,7 @@ export function GallerySection() {
           {galleryImages.map((image, index) => (
             <div
               key={image.id}
-              className="group relative overflow-hidden aspect-square cursor-pointer"
+              className="group relative  aspect-square cursor-pointer"
               onClick={() => setSelectedImageId(image.id)}
               style={{
                 opacity: isVisible ? 1 : 0,
@@ -218,6 +236,8 @@ export function GallerySection() {
               </div>
             </div>
           ))}
+        </div>
+        </div>
         </div>
       </div>
 

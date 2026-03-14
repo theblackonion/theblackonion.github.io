@@ -51,10 +51,10 @@ export function PhilosophySection() {
     <section
       ref={sectionRef}
       id="philosophy"
-      className="relative py-32 md:py-48 bg-primary text-primary-foreground overflow-hidden"
+      className="relative py-32 md:py-48 bg-primary text-primary-foreground "
     >
       {/* Architectural Background Lines */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none ">
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
           <line
             x1="0" y1="200" x2="1920" y2="400"
@@ -103,7 +103,7 @@ export function PhilosophySection() {
           {/* Section Label */}
           <div className="lg:col-span-2">
             <div
-              className="flex items-center gap-4"
+              className="flex items-center gap-4 whitespace-nowrap lg:sticky lg:top-32 lg:mt-3"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateX(0)" : "translateX(-20px)",
@@ -181,7 +181,7 @@ export function PhilosophySection() {
             transitionDelay: "0.6s"
           }}
         >
-          <div className="relative aspect-[21/15.35] overflow-hidden">
+          <div className="relative aspect-[21/15.35] ">
             <ImageReveal
               src="https://cdn.sanity.io/images/sgh3154e/production/5d19bf1fdd2fb0ca743eecc08101abd1eee867f5-2048x1536.jpg"
               alt="The Black Onion team at cybersecurity event"

@@ -60,14 +60,14 @@ export function ExperienceSection() {
     <section
       ref={sectionRef}
       id="experience"
-      className="relative py-32 md:py-48 overflow-hidden"
+      className="relative py-32 md:py-48 "
     >
       <div className="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-20">
         <div className="grid lg:grid-cols-12 lg:gap-20">
           {/* Section Label */}
           <div className="lg:col-span-2">
             <div
-              className="flex items-center gap-4 lg:sticky lg:top-32"
+              className="flex items-center gap-4 whitespace-nowrap lg:sticky lg:top-32 lg:mt-3"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateX(0)" : "translateX(-20px)",
@@ -114,7 +114,7 @@ export function ExperienceSection() {
 
             {/* Experience Image */}
             <div
-              className="relative aspect-[16/9] mb-20 md:mb-32 overflow-hidden"
+              className="relative aspect-[16/9] mb-20 md:mb-32 "
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateY(0)" : "translateY(40px)",
@@ -192,7 +192,7 @@ export function ExperienceSection() {
 
                   {/* Expanded Content */}
                   <div
-                    className="overflow-hidden transition-all duration-500 ease-out"
+                    className=" transition-all duration-500 ease-out"
                     style={{
                       maxHeight: activeStep === index ? "400px" : "0",
                       opacity: activeStep === index ? 1 : 0

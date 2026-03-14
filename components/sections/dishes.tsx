@@ -63,14 +63,14 @@ export function DishesSection() {
     <section 
       ref={sectionRef}
       id="dishes"
-      className="relative py-32 md:py-48 overflow-hidden bg-secondary"
+      className="relative py-32 md:py-48  bg-secondary"
     >
       <div className="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-20">
         {/* Section Header */}
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-20 mb-20 md:mb-32">
           <div className="lg:col-span-2">
             <div 
-              className="flex items-center gap-4"
+              className="flex items-center gap-4 whitespace-nowrap lg:sticky lg:top-32 lg:mt-3"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateX(0)" : "translateX(-20px)",
@@ -104,7 +104,7 @@ export function DishesSection() {
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Main Image */}
           <div className="lg:col-span-8 relative">
-            <div className="relative aspect-[4/3] overflow-hidden bg-background">
+            <div className="relative aspect-[4/3]  bg-background">
               {dishes.map((dish, index) => (
                 <div
                   key={dish.id}
@@ -176,7 +176,7 @@ export function DishesSection() {
 
                   {/* Description - Only show for active dish */}
                   <div 
-                    className="overflow-hidden transition-all duration-500"
+                    className=" transition-all duration-500"
                     style={{ 
                       maxHeight: activeDish === index ? "300px" : "0",
                       opacity: activeDish === index ? 1 : 0

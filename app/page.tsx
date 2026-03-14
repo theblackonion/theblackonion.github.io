@@ -5,6 +5,7 @@ import { PhilosophySection } from "@/components/sections/philosophy"
 import { ExperienceSection } from "@/components/sections/experience"
 import { AchievementsSection } from "@/components/sections/achievements"
 import { TeamSection } from "@/components/sections/team"
+import { PartnersSection } from "@/components/sections/partners"
 import { GallerySection } from "@/components/sections/gallery"
 import { ContactSection } from "@/components/sections/contact"
 import { Footer } from "@/components/footer"
@@ -19,6 +20,7 @@ export default function Home() {
       <ExperienceSection />
       <AchievementsSection />
       <TeamSection />
+      <PartnersSection />
       <GallerySection />
       <ContactSection />
       <Footer />

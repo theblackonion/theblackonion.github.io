@@ -40,7 +40,7 @@ export function ContactSection() {
     <section 
       ref={sectionRef}
       id="contact"
-      className="relative py-32 md:py-48 overflow-hidden"
+      className="relative py-32 md:py-48 "
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 pointer-events-none">
@@ -59,14 +59,14 @@ export function ContactSection() {
           {/* Section Label */}
           <div className="lg:col-span-2">
             <div 
-              className="flex items-center gap-4"
+              className="flex items-center gap-4 whitespace-nowrap lg:sticky lg:top-32 lg:mt-3"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateX(0)" : "translateX(-20px)",
                 transition: "all 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
               }}
             >
-              <span className="text-xs tracking-[0.3em] uppercase text-muted-foreground">(05)</span>
+              <span className="text-xs tracking-[0.3em] uppercase text-muted-foreground">(08)</span>
               <div className="w-8 h-px bg-border" />
               <span className="text-xs tracking-[0.3em] uppercase text-muted-foreground">Contact</span>
             </div>

@@ -27,7 +27,7 @@ export function HeroSection() {
   return (
     <section 
       ref={sectionRef}
-      className="relative min-h-screen flex items-end overflow-hidden"
+      className="relative min-h-screen flex items-end "
     >
       {/* Background Image with Parallax */}
       <div 
@@ -48,7 +48,7 @@ export function HeroSection() {
       </div>
 
       {/* Architectural Grid Lines */}
-      <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
+      <div className="absolute inset-0 z-10 pointer-events-none ">
         <div 
           className="absolute left-[10%] top-0 w-px h-full bg-foreground/5"
           style={{
@@ -80,9 +80,9 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end">
           {/* Main Headline */}
           <div className="lg:col-span-8">
-            <div className="overflow-hidden">
+            <div className="">
               <h1 
-                className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-light leading-[0.9] tracking-[-0.02em] text-foreground"
+                className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light leading-[0.9] tracking-[-0.02em] text-foreground"
                 style={{
                   transform: isLoaded ? "translateY(0)" : "translateY(100%)",
                   opacity: isLoaded ? 1 : 0,
@@ -92,7 +92,7 @@ export function HeroSection() {
                   transitionDelay: "0.3s"
                 }}
               >
-                <span className="block text-pretty">The Black Onion</span>
+                <span className="block text-pretty font-semibold">The Black Onion</span>
                 <span className="block text-pretty">Elite Cyber Security</span>
                 <span className="block text-accent italic">Professionals</span>
               </h1>
@@ -112,11 +112,11 @@ export function HeroSection() {
                 transitionDelay: "0.6s"
               }}
             >
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 whitespace-nowrap lg:sticky lg:top-32 lg:mt-3">
                 <div className="w-12 h-px bg-accent" />
-                <span className="text-xs tracking-[0.3em] uppercase text-muted-foreground">Elite Offensive Security</span>
+                <span className="text-xs tracking-[0.3em] uppercase text-slate-700">Elite Offensive Security</span>
               </div>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground max-w-md">
+              <p className="text-base md:text-lg leading-relaxed text-slate-700 max-w-md">
                 Whether you're securing web applications, analyzing network traffic, or hunting for vulnerabilities, Black Onion premium security services make the whole cybersecurity experience the most comprehensive it can be.
               </p>
               <div className="pt-2">
@@ -144,7 +144,7 @@ export function HeroSection() {
           }}
         >
           <span className="text-xs tracking-[0.2em] uppercase text-muted-foreground">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-foreground/40 to-transparent relative overflow-hidden">
+          <div className="w-px h-12 bg-gradient-to-b from-foreground/40 to-transparent relative ">
             <div className="absolute inset-0 w-full bg-accent animate-pulse" style={{ animation: "scrollPulse 2s ease-in-out infinite" }} />
           </div>
         </div>
@@ -162,7 +162,7 @@ export function HeroSection() {
           transitionDelay: "0.9s"
         }}
       >
-        <div className="flex items-center gap-4 text-xs tracking-[0.2em] uppercase text-muted-foreground">
+        <div className="flex items-center gap-4 text-xs tracking-[0.2em] uppercase text-gray-800">
           <span>47.6062° N</span>
           <div className="w-8 h-px bg-border" />
           <span>122.3321° W</span>

@@ -56,7 +56,7 @@ export function AchievementsSection() {
           {/* Section Label */}
           <div className="lg:col-span-2">
             <div 
-              className="flex items-center gap-4 lg:sticky lg:top-32"
+              className="flex items-center gap-4 whitespace-nowrap lg:sticky lg:top-32 lg:mt-3"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateX(0)" : "translateX(-20px)",
