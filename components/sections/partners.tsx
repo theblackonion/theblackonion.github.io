@@ -13,7 +13,7 @@ interface Partner {
 
 const partners: Partner[] = [
   {
-    name: "Syntax Society",
+    name: "Cyber Security CLub",
     type: "Student Innovation Partner",
     description: "CTF & Student Cybersecurity Training",
     image: "/images/collaborators/CS-USA.jpg"
